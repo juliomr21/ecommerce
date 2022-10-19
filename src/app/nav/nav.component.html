@@ -8,25 +8,57 @@
         <a class="nav-link">Contact</a>
 
         <div class=" flex" style="margin-left: auto; margin-top: 1%;">
-            <div style="margin-right: 10px; margin-top: 5px;">
+            <div style="margin-right: 20px; margin-top: 5px;">
                 <!-- <button style="background: transparent; border-color: transparent;"><img src="assets/icon-cart.svg"> </button> -->
             
-                <button type="button" class="btn position-relative" width="35" height="35" style="background: transparent;border-color: transparent;">
+                <button type="button" class="btn position-relative" width="35" height="35" style="background: transparent;border-color: transparent;" data-bs-toggle="modal" data-bs-target="#exampleModal">
             
                     <img src="assets/icon-cart.svg" height="100%" width="100%">
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      10
+                    <span *ngIf="badge!=0" class="position-absolute top-50 start-95 translate-middle badge rounded-pill " style="background-color: hsl(26, 100%, 55%)">
+                      {{badge}}
                       <span class="visually-hidden">unread messages</span>
                     </span>
                   </button>
-    
-            
+                
             </div>
                         <div>
-                <img style=" margin-right: auto;" src="assets/image-avatar.png" alt="" width="45"
-                    height="45">
+                <img class="avatar" style=" margin-right: auto; " src="assets/image-avatar.png" alt="">
             </div>
         </div>
 
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="badge != 0">
+                    <div  class="flex">
+                        <img src="assets/image-product-1-thumbnail.jpg" alt="" style="width: 60px; height:60px">
+                        <div style="margin-left: auto; margin-right:auto">
+                           <h4>Fall Limited Edition Sneakers</h4> 
+                            <h6>$125.00 X {{badge}} = {{total}} </h6>
+                        </div>
+                        <img src="assets/icon-delete.svg" alt="" (click)="delete_cart()" data-bs-dismiss="modal" style="width: 20px; height:20px;margin-bottom: auto; margin-top:auto; cursor: pointer;">
+                    </div>
+                    <button type="button" class="btn button-orangek">Checkout</button>
+                </div>
+                               
+                <div *ngIf="badge == 0">
+                    <h5 class="text-center">Your cart is empty</h5>
+                </div>
+              
+             
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              
+            </div> -->
+          </div>
+        </div>
+      </div>
+      
 </nav>

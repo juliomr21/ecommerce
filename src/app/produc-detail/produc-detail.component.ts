@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyService } from '../buy.service';
 
 @Component({
   selector: 'app-produc-detail',
@@ -13,7 +14,7 @@ export class ProducDetailComponent implements OnInit {
   img2 = {};
   img3 = {};
   img4 = {};
-  constructor() { }
+  constructor(private buy:BuyService) { }
 
   ngOnInit(): void {
   }
@@ -42,5 +43,9 @@ export class ProducDetailComponent implements OnInit {
      case '4': this.img4 = this.img_selec;break
     }
     
+  }
+  add_cart(){
+    this.buy.add_cart(this.cant);
+    this.cant = 0;
   }
 }
