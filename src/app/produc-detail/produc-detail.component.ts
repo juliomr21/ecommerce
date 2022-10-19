@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produc-detail.component.css']
 })
 export class ProducDetailComponent implements OnInit {
-  cant: number = 3
+  cant: number = 0
   constructor() { }
 
   ngOnInit(): void {
   }
+  modificar_cart( op:string){
+    //let op = 2;
+    if(op == "1")
+    {
+      this.cant++;
 
+    }
+    else
+    {
+      if(this.cant - 1 >= 0)
+      this.cant--;
+    }
+  }
 }

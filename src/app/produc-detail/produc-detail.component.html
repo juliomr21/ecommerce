@@ -30,15 +30,15 @@
         <div class="flex " >
 
             <div class="flex cel" style="border-radius: 10px;">
-                <div>
+                <div (click)="modificar_cart('2')">
                     <img src="assets/icon-minus.svg" style="margin-left: 6px;margin-right: 30px; cursor: pointer; "
-                        width="15px">
+                        width="15px" >
                 </div>
                 <strong>
                     {{cant}}
                 </strong>
 
-                <div>
+                <div (click)="modificar_cart('1')">
                     <img src="assets/icon-plus.svg" style="margin-left: 30px; cursor: pointer;">
                 </div>
 
