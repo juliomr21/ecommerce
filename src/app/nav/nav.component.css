@@ -1,0 +1,23 @@
+.flex{
+    display: flex;
+}
+.cel {
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    background-color: brown;
+   
+}
+
+.nav-link{
+    margin-top: 2%;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.pos-end{
+   
+    justify-content: flex-end;
+    /* margin-left: auto;
+    margin-right: 4%; */
+  }
