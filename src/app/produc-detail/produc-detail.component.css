@@ -17,8 +17,22 @@
     background-color: hsl(26, 100%, 55%);
     color: hsl(0, 0%, 100%);
     height: 40px;
+    width: 180px;
     margin-top: 15px;
-    margin-left: 10px;
+    margin-left: 15px;
     /* background-image: none; */
     
+}
+.image-mini{
+    border-radius: 10px;
+     cursor: pointer;
+     width: 70px;
+     height: 70px;
+     margin-right: 25px;
+     
+     
+}
+.image-mini:hover{
+    opacity: 60%;
+   
 }
