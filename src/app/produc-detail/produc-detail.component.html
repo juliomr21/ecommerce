@@ -1,6 +1,7 @@
 <hr style="margin-top: 3%;">
+
 <div class="row" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
-    <div class="col-md-5" style="margin-top: 5%; ">
+    <div class="col-md-6" style="margin-top: 5%; ">
         <div class="d-none d-md-block">
 
             <img src={{image_detail}} alt="" width="360px" height="360px" style="border-radius: 1em; "
@@ -74,6 +75,7 @@
                 </div>
 
             </div>
+            
             <!-- margin-right: 30px;margin-left: 30px; -->
             <button class="button-orange btn" (click)="add_cart()"><img src="assets/icon-cart.svg"
                     style="margin-right: 6px;"> Add to cart</button>
@@ -92,22 +94,22 @@
                         data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <div class="modal-body  ">
-                    <div class="flex">
-                        <div class="rounded-circle modal-content " (click)="mov_image('prev')"
-                            style="background-color: rgb(216, 216, 228); margin-top: auto; margin-bottom: auto;  width: 50px; height: 50px;">
+                    <div class="flex ">
+                        <img src={{image_modal}} alt="" width="90%" height="400" class="modal-content"  style="position: absolute; border-radius: 1rem; "  >
+                        <div class="rounded-circle modal-content" (click)="mov_image('prev')"
+                            style="cursor: pointer; position: relative; background-color: rgb(216, 216, 228); width: 40px; height: 40px;margin-left: 5%; margin-right: auto;margin-top: 130px; margin-bottom: 130px;">
                             <img src="assets/icon-previous.svg" alt=""
-                                style="margin-left: 20px;margin-right: 20px; margin-top: 15px">
+                                style="margin-left: 10px;margin-right: 20px; margin-top: 10px; width:15px; height: 15px;">
                         </div>
-
-                        <img src={{image_modal}} alt="" width="400px" height="420px" style="border-radius: 1em;  "
-                            class="modal-content">
-                        <div class="rounded-circle modal-content " (click)="mov_image('next')"
-                            style=" background-color: rgb(216, 216, 228); margin-top: auto; margin-bottom: auto;  width: 50px; height: 50px;">
+                
+                        
+                        <div class="rounded-circle modal-content" (click)="mov_image('next')"
+                            style="cursor: pointer; background-color: rgb(216, 216, 228);  width: 40px; height: 40px; margin-left: auto;margin-top: 130px; position: relative; ">
                             <img src="assets/icon-next.svg" alt=""
-                                style="margin-left: 20px;margin-right: 20px; margin-top: 15px">
+                                style="margin-left: 15px;margin-right: 20px; margin-top: 10px; width:15px; height: 15px;  ">
                         </div>
                     </div>
-                    <div class="flex " style="margin-top: 3%; margin-left: 12%;">
+                    <div class="flex " style="margin-top: 25%; margin-left: 15%;">
                         <img src="assets/image-product-1-thumbnail.jpg" alt="" class="image-mini modal-content"
                             [ngStyle]="imgM1" (click)="change_imageM('1')">
                         <img src="assets/image-product-2-thumbnail.jpg" alt="" class="image-mini modal-content"
@@ -125,3 +127,4 @@
             </div>
         </div>
     </div>
+    

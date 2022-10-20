@@ -2,6 +2,8 @@
     <div class="flex" >
       <div class="d-sm-none">
         <button style="margin-top: 10px; background-color:transparent; border: transparent; "><img src="assets/icon-menu.svg"></button>
+      
+      
       </div>
         <h2 style="margin-right: 10%; margin-top: 10px;"> <strong>sneakers</strong> </h2>
         <div class="d-none d-md-block">
@@ -53,7 +55,7 @@
                         </div>
                         <img src="assets/icon-delete.svg" alt="" (click)="delete_cart()" data-bs-dismiss="modal" style="width: 20px; height:20px;margin-bottom: auto; margin-top:auto; cursor: pointer;">
                     </div>
-                    <button type="button" class="btn button-orangek">Checkout</button>
+                    <button type="button" class="btn button-orangek"  data-bs-dismiss="modal" aria-label="Close">Checkout</button>
                 </div>
                                
                 <div *ngIf="badge == 0">

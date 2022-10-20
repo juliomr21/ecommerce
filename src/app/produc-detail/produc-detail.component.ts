@@ -11,7 +11,7 @@ export class ProducDetailComponent implements OnInit {
   mov: number = 1;
   image_detail = "assets/image-product-1.jpg";
   image_modal = "assets/image-product-1.jpg";
-  img_selec ={"border": "3px solid","border-color": "hsl(26, 100%, 55%)","opacity": "80%" }
+  img_selec ={"border": "3px solid","border-color": "hsl(26, 100%, 55%)","opacity": "70%" }
   img1 = {};
   img2 = {};
   img3 = {};
