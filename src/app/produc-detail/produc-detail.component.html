@@ -1,52 +1,127 @@
 <hr style="margin-top: 3%;">
-<div class="flex">
-    <div  style="margin-top: 5%; margin-left: 5%;">
-        <img src={{image_detail}} alt="" width="360px" height="360px" style="border-radius: 1em;">
+<div class="row" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">
+    <div class="col-md-5" style="margin-top: 5%; ">
+        <div class="d-none d-md-block">
+
+            <img src={{image_detail}} alt="" width="360px" height="360px" style="border-radius: 1em; "
+            data-bs-toggle="modal" data-bs-target="#imageModal">
         <div class="flex" style="margin-top: 5%;">
-            <img src="assets/image-product-1-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img1" (click)="change_image('1')"> 
-            <img src="assets/image-product-2-thumbnail.jpg" alt=""  class="image-mini" [ngStyle]="img2"  (click)="change_image('2')"> 
-            <img src="assets/image-product-3-thumbnail.jpg" alt=""  class="image-mini" [ngStyle]="img3" (click)="change_image('3')"> 
-            <img src="assets/image-product-4-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img4" (click)="change_image('4')">  
+            <img src="assets/image-product-1-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img1"
+                (click)="change_image('1')">
+            <img src="assets/image-product-2-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img2"
+                (click)="change_image('2')">
+            <img src="assets/image-product-3-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img3"
+                (click)="change_image('3')">
+            <img src="assets/image-product-4-thumbnail.jpg" alt="" class="image-mini" [ngStyle]="img4"
+                (click)="change_image('4')">
+        </div>
+        </div>
+        
+    </div>
+    <!-- Movil version begin -->
+    <div class="d-sm-none">
+          
+    <div class="flex">
+        <img src={{image_modal}} alt="" width="350px" height="300px"   style="position: absolute; "  >
+        <div class="rounded-circle  " (click)="mov_image('prev')"
+            style="position: relative; background-color: rgb(216, 216, 228); width: 40px; height: 40px;margin-left: 3px; margin-right: auto;margin-top: 130px; margin-bottom: 130px;">
+            <img src="assets/icon-previous.svg" alt=""
+                style="margin-left: 10px;margin-right: 20px; margin-top: 10px">
+        </div>
+
+        
+        <div class="rounded-circle " (click)="mov_image('next')"
+            style=" background-color: rgb(216, 216, 228);  width: 40px; height: 40px; margin-left: auto; margin-right: 3px;margin-top: 130px; position: relative; ">
+            <img src="assets/icon-next.svg" alt=""
+                style="margin-left: 15px;margin-right: 20px; margin-top: 10px;  ">
         </div>
     </div>
-    <span style="margin-left: 5%; margin-right:5%"></span>
-    <div  style="margin-top: 10%; margin-right: 10%;">
+
+    </div>
+    <!-- Movil version end -->
+    <!-- <span style="margin-left: 5%; margin-right:5%"></span> -->
+    <div class="col-md-5" style="margin-top: 10%; margin-left: auto; margin-right: 5%;">
         <h5 style="color: hsl(26, 100%, 55%);">Sneaker Company</h5>
 
-        <h2>Fall Limited Edition Sneakers</h2>
+        <h2> <strong>Fall Limited Edition Sneakers</strong> </h2>
 
-        <p>
+        <p style="color: hsl(219, 9%, 45%);">
             These low-profile sneakers are your perfect casual wear companion. Featuring a
             durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
         <div class="flex">
-            <div >
-                <h4> $125.00</h4>
+            <div>
+                <h4><strong>$125.00</strong> </h4>
             </div>
-            <p style="color: hsl(26, 100%, 55%); background-color:hsl(25, 100%, 94%); margin-left: 5%; margin-top: 1%;" >50%</p>
+            <p style="color: hsl(26, 100%, 55%); background-color:hsl(25, 100%, 94%); margin-left: 5%; margin-top: 1%;">
+                50%</p>
 
         </div>
-        <s>$250.00</s>
-        <div class="flex " >
+        <s style="color: hsl(219, 9%, 45%);">$250.00</s>
+        <div class="flex ">
 
             <div class="flex cel" style="border-radius: 10px;">
-                <div (click)="modificar_cart('2')"style="margin-bottom:auto; margin-top:auto; margin-left: 6px; cursor: pointer;  ">
-                    <img src="assets/icon-minus.svg" 
-                        width="15px" >
+                <div (click)="modificar_cart('2')"
+                    style="margin-bottom:auto; margin-top:auto; margin-left: 6px; cursor: pointer;  ">
+                    <img src="assets/icon-minus.svg" width="15px">
                 </div>
                 <strong style="margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto;">
                     {{cant}}
                 </strong>
 
                 <div (click)="modificar_cart('1')" style=" cursor: pointer; margin-top: auto; margin-bottom: auto;">
-                    <img src="assets/icon-plus.svg" style="margin-right: 10px;" >
+                    <img src="assets/icon-plus.svg" style="margin-right: 10px;">
                 </div>
 
             </div>
             <!-- margin-right: 30px;margin-left: 30px; -->
-            <button class="button-orangek btn" (click)="add_cart()"><img src="assets/icon-cart.svg" style="margin-right: 6px;"> Add to cart</button>
+            <button class="button-orange btn" (click)="add_cart()"><img src="assets/icon-cart.svg"
+                    style="margin-right: 6px;"> Add to cart</button>
 
         </div>
-        
 
+
+    </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="">
+                <div class="" style="margin-left: 100%;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">Cart</h5> -->
+                    <!-- {{mov}} -->
+                    <button type="button" class="btn" style="color: hsl(26, 100%, 55%); font-size: 16px "
+                        data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body  ">
+                    <div class="flex">
+                        <div class="rounded-circle modal-content " (click)="mov_image('prev')"
+                            style="background-color: rgb(216, 216, 228); margin-top: auto; margin-bottom: auto;  width: 50px; height: 50px;">
+                            <img src="assets/icon-previous.svg" alt=""
+                                style="margin-left: 20px;margin-right: 20px; margin-top: 15px">
+                        </div>
+
+                        <img src={{image_modal}} alt="" width="400px" height="420px" style="border-radius: 1em;  "
+                            class="modal-content">
+                        <div class="rounded-circle modal-content " (click)="mov_image('next')"
+                            style=" background-color: rgb(216, 216, 228); margin-top: auto; margin-bottom: auto;  width: 50px; height: 50px;">
+                            <img src="assets/icon-next.svg" alt=""
+                                style="margin-left: 20px;margin-right: 20px; margin-top: 15px">
+                        </div>
+                    </div>
+                    <div class="flex " style="margin-top: 3%; margin-left: 12%;">
+                        <img src="assets/image-product-1-thumbnail.jpg" alt="" class="image-mini modal-content"
+                            [ngStyle]="imgM1" (click)="change_imageM('1')">
+                        <img src="assets/image-product-2-thumbnail.jpg" alt="" class="image-mini modal-content"
+                            [ngStyle]="imgM2" (click)="change_imageM('2')">
+                        <img src="assets/image-product-3-thumbnail.jpg" alt="" class="image-mini modal-content"
+                            [ngStyle]="imgM3" (click)="change_imageM('3')">
+                        <img src="assets/image-product-4-thumbnail.jpg" alt="" class="image-mini modal-content"
+                            [ngStyle]="imgM4" (click)="change_imageM('4')">
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
     </div>
